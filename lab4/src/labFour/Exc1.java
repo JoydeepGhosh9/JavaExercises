@@ -12,6 +12,7 @@ class Account extends Person{
     private long accno;
     double balance;
     
+    
     public void accholder(String nam, float ag){
         name = nam;
         age = ag;
@@ -43,6 +44,36 @@ class Account extends Person{
     
 }
 
+class SavingsAccount extends Account {
+    
+    final double minBalance = 500;
+    
+    @Override
+    public double withdraw(double widraw){
+        
+        if(balance>minBalance){
+            balance = balance - widraw;
+        }
+        return balance;
+        
+    }
+
+class CurrentAccount extends Account{
+    
+    double overdraftLimit = 10000;
+    @Override
+    public double withdraw(double widraw){
+        if(widraw>1000){
+            return -1;
+        }
+        else
+            return 1;
+        
+    }
+}
+    
+}
+
 public class Exc1 {
     static public String random(){
         Random rand = new Random();
@@ -57,16 +88,26 @@ public class Exc1 {
     public static void main(String agrs[])
         
     {
+        double bal2 = 0;
         Scanner sc = new Scanner(System.in);
         
-        Account smith = new Account();
+        Account smith = new SavingsAccount();
         smith.accholder("smith", 40);
-        smith.setaccno(Long.parseLong((random())));
-        System.out.println("Your account number is " + smith.getaccno());
-        System.out.println("You must deposut a sum greter than 500 to start your account \nEnter the money you want to deposit");
-        smith.deposit(sc.nextDouble());
+        smith.setaccno(Long.parseLong(random()));
+        smith.balance = 2000;
+        double bal = smith.deposit(2000);
+//        System.out.println("Your account number is " + smith.getaccno());
+//        System.out.println("You must deposut a sum greter than 500 to start your account /n Enter the money you want to deposit");
+//        smith.deposit(sc.nextDouble());
+
+        System.out.println("your updated balance is " + bal);
         
+        Account kathy = new SavingsAccount();
+        kathy.accholder("Kathy", 20);
+        kathy.setaccno(Long.parseLong(random()));
+        kathy.balance = 3000;
         
-        
+        bal2 = kathy.withdraw(2000);
+        System.out.println("your updated balance is " + bal2);
 }
 }

@@ -1,0 +1,41 @@
+package Lab3ex;
+
+import java.util.Scanner;
+import java.lang.Math;
+
+public class modifyNewNumber {
+	
+	static int modifyNumber(String num) {
+	
+		StringBuffer s = new StringBuffer();
+		
+		for(int i=0;i<num.length()-1;i++) {
+			
+			s.append(String.valueOf((Math.abs(num.charAt(i) - num.charAt(i+1))))); 
+		  
+		}
+		 StringBuffer n = s.append(num.charAt(num.length()-1));
+		
+		int newnumber = Integer.parseInt(n.toString());
+		
+		return newnumber;
+		
+		
+	}
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int num = sc.nextInt();
+		
+		String number = String.valueOf(num);
+		
+		int newnum = modifyNumber(number);
+		
+		System.out.print(newnum);
+		sc.close();
+
+	}
+
+}

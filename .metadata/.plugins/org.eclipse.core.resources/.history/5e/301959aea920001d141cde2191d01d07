@@ -1,0 +1,11 @@
+package myfirst;
+
+public class practice {
+	
+	public static void main(String arga[])
+	{
+		int x=10, y=10;
+		System.out.print(x + x + "hello " + x + y);
+	}
+
+}

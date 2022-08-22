@@ -1,0 +1,29 @@
+package Lab3ex;
+
+import java.io.*;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class displayItemsfromText {
+
+	public static void main(String[] args) throws Exception {
+		Scanner scanner = new Scanner(System.in);
+		 
+		
+//        while (scanner.hasNextLine())
+//        {
+//            String to[] = scanner.nextLine().split("\\s");
+//            System.out.println(Arrays.toString(to));
+//        }
+// 
+//        scanner.close();
+		FileReader fr = new FileReader("read.txt");
+		BufferedReader reader = new BufferedReader(fr);
+		
+		
+		while(reader.readLine()!=" ") {
+			System.out.print(reader.readLine());		}
+
+	}
+
+}

@@ -1,0 +1,30 @@
+package Lab3ex;
+
+import java.io.*;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class displayItemsfromText {
+
+	public static void main(String[] args) throws Exception {
+		Scanner scanner = new Scanner(System.in);
+		 
+		
+//        while (scanner.hasNextLine())
+//        {
+//            String to[] = scanner.nextLine().split("\\s");
+//            System.out.println(Arrays.toString(to));
+//        }
+// 
+//        scanner.close();
+		FileReader fr = new FileReader("C:\\Users\\Joydeep Ghosh\\eclipse-workspace\\LabThree\\src\\Lab3exread.txt");
+		BufferedReader reader = new BufferedReader(fr);
+		
+		int i;
+		while((i=reader.read())!= -1) {
+			System.out.print((char)i);		}
+
+	}
+	
+
+}

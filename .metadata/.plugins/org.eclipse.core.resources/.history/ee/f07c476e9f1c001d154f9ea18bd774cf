@@ -1,0 +1,37 @@
+package Lab2ex;
+
+import java.util.Scanner;
+
+public class secondsmallestelement {
+	
+	static int getSecondsmallest(int n[]) {
+		
+		int max = n[0], max2=n[0];
+		
+		for(int i=1;i<n.length;i++) {
+			
+			if(n[i]<max) {
+				max2 = max;
+				max = n[i];
+		}
+			else if(n[i]<max2) {
+				max2 = n[i];
+			}
+		
+	}
+		System.out.println(max);
+		System.out.println(max2);
+		return n[2];
+}
+	
+	public static void main(String args[]) {
+		
+		int a[] = {8,34,45,2,80,243,9};
+		int smallestelement = getSecondsmallest(a);
+		System.out.println(smallestelement);
+	}
+
+	
+}
+
+

@@ -1,0 +1,10 @@
+package Lab2ex;
+
+public class sortStringsinAlphaOder {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
